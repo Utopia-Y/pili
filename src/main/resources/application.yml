@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    name: PL
+    url: jdbc:mysql://127.0.0.1:3306/PL?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: root
+    password: slwxyrt12
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.dao
+
+server:
+  port: 8095
