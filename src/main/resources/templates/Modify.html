@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Modify</title>
+    <title>修改User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-hello world
+<div style="margin:0px auto; width:500px">
+
+    <form action="updateUser" method="post">
+        name: <input name="name" th:value="${personDaoList.name}"/> <br/>
+        <input name="id" type="hidden" th:value="${personDaoList.id}"/>
+        <button type="submit">提交</button>
+    </form>
+</div>
 </body>
 </html>

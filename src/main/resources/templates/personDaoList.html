@@ -7,36 +7,36 @@
 </head>
 
 <body>
-<!--<div th: fragment="content" style="width:500px;margin:20px auto;text-align: center">-->
-<!--    <table align = "center" border="1" cellspacing="0">-->
-<!--    <tr>-->
-<!--        <td>id</td>-->
-<!--        <td>name</td>-->
-<!--        <td>gender</td>-->
-<!--        <td>number</td>-->
-<!--        <td>编辑</td>-->
-<!--        <td>删除</td>-->
+<div th: fragment="content" style="width:500px;margin:20px auto;text-align: center">
+    <table align = "center" border="1" cellspacing="0">
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>gender</td>
+        <td>number</td>
+        <td>编辑</td>
+        <td>删除</td>
 
+        personDaoList
 
+    <tr th: each = "pl:${personDaoList}">
+        <td th: text = "${pl.id}"></td>
+        <td th: text = "${pl.name}"></td>
+        <td th: text = "${pl.gender}"></td>
+        <td th: text = "${pl.number}"></td>
+        <td><a th:href="@{/findUser(id=${pl.id})}">编辑</a></td>
+        <td><a th:href="@{/deleteUser(id=${pl.id})}">删除</a></td>
 
-<!--&lt;!&ndash;    <tr th: each = "pl:${personDaoList}">&ndash;&gt;-->
-<!--&lt;!&ndash;        <td th: text = "${pl.id}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;        <td th: text = "${pl.name}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;        <td th: text = "${pl.gender}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;        <td th: text = "${pl.number}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;        <td><a th:href="@{/findUser(id=${c.id})}">编辑</a></td>&ndash;&gt;-->
-<!--&lt;!&ndash;        <td><a th:href="@{/deleteUser(id=${c.id})}">删除</a></td>&ndash;&gt;-->
+    </tr>
+    </table>
 
-<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
-<!--    </table>-->
+    <form action="addUser" method="post">
+        name: <input name="name"/> <br/>
+        <button type="submit">添加</button>
 
-<!--    <form action="addUser" method="post">-->
-<!--        name: <input name="name"/> <br/>-->
-<!--        <button type="submit">添加</button>-->
+    </form>
+</div>
 
-<!--    </form>-->
-<!--</div>-->
-hello world
 </body>
 </html>
 

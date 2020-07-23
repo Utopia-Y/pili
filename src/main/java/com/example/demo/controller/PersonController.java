@@ -20,21 +20,21 @@ public class PersonController {
     @RequestMapping("/list")
     public String personDaoList(Model model){
         model.addAttribute("personDaoList", personService.personDaoList());
-        return "redirect:personDaoList";
+        return "personDaoList";
     }
 
     //删除
     @RequestMapping("/delete")
     public String deletePerson(int id){
         personService.delete(id);
-        return "redierct:personDaoList";
+        return "personDaoList";
     }
 
     //插入
     @RequestMapping("/add")
     public String addPerson(ModelMap map){
         map.addAttribute("personDaoList", new PersonDao());
-        return "redirect:personDaoList";
+        return "personDaoList";
     }
 
 
@@ -47,7 +47,7 @@ public class PersonController {
     @RequestMapping("/save")
     public String savePerson(@ModelAttribute PersonDao personDao){
         personService.update(personDao);
-        return "personDapList";
+        return "personDaoList";
     }
 
 }
