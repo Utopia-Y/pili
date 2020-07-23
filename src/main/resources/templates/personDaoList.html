@@ -7,34 +7,31 @@
 </head>
 
 <body>
-<div th: fragment="content" style="width:500px;margin:20px auto;text-align: center">
+<div style="width:500px;margin:20px auto;text-align: center">
+    <h th:text="${title}">hello</h>
     <table align = "center" border="1" cellspacing="0">
-    <tr>
+    <th>
         <td>id</td>
         <td>name</td>
         <td>gender</td>
         <td>number</td>
         <td>编辑</td>
         <td>删除</td>
+    </th>
 
-        personDaoList
-
-    <tr th: each = "pl:${personDaoList}">
-        <td th: text = "${pl.id}"></td>
-        <td th: text = "${pl.name}"></td>
-        <td th: text = "${pl.gender}"></td>
-        <td th: text = "${pl.number}"></td>
+    <tr th:each = "pl: ${personDaoList}">
+        <td th:text = "${pl.id}"></td>
+        <td th:text = "${pl.name}"></td>
+        <td th:text = "${pl.gender}"></td>
+        <td th:text = "${pl.number}"></td>
         <td><a th:href="@{/findUser(id=${pl.id})}">编辑</a></td>
         <td><a th:href="@{/deleteUser(id=${pl.id})}">删除</a></td>
 
     </tr>
+
     </table>
 
-    <form action="addUser" method="post">
-        name: <input name="name"/> <br/>
-        <button type="submit">添加</button>
 
-    </form>
 </div>
 
 </body>

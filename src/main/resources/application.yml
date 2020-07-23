@@ -3,7 +3,7 @@ spring:
     name: PL
     url: jdbc:mysql://127.0.0.1:3306/PL?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
     username: root
-    password: slwxyrt12
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
@@ -11,4 +11,4 @@ mybatis:
   type-aliases-package: com.example.demo.dao
 
 server:
-  port: 8095
+  port: 8096

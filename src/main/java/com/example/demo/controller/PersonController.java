@@ -10,6 +10,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class PersonController {
 
@@ -17,8 +19,13 @@ public class PersonController {
     PersonService personService;
 
     //展示
-    @RequestMapping("/list")
+    @RequestMapping("/personDaoList")
     public String personDaoList(Model model){
+        List<PersonDao> personList = personService.personDaoList();
+        for(PersonDao person : personList){
+            System.out.println("person: " + person.getName());
+        }
+        model.addAttribute("title", "test");
         model.addAttribute("personDaoList", personService.personDaoList());
         return "personDaoList";
     }
